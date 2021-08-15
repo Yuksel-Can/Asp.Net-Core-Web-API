@@ -11,6 +11,9 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfCategoryDal : EfEntityRepositoryBase<Category, NorthwindContext>, ICategoryDal
     {
-       
+        public List<Category> GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
