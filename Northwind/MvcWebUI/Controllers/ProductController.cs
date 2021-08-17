@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc; //controller için
 using MvcWebUI.Models;
 using System;
 using System.Collections.Generic;
@@ -16,11 +16,11 @@ namespace MvcWebUI.Controllers
         {
             _productService = productService;
         }
-        public IActionResult Index()
+        public IActionResult Index(int category)
         {
             var model = new ProductListViewModel
             {
-                Products = _productService.GetAll()
+                Products = category>0?_productService.GetByCategory(category):_productService.GetAll()  //if koşulu koyduk category varsa ona göre yoksa hepsi listelenecek
             };
             return View(model);
         }

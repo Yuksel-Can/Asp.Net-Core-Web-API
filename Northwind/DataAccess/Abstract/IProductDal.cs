@@ -6,9 +6,9 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IProductDal:IEntityRepository<Product>
+    public interface IProductDal : IEntityRepository<Product>
     {
         //buraya crud işlemleri yazılır
-
+        //Product Get();
     }
 }

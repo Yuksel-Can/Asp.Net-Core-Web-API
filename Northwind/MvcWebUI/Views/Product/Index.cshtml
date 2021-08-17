@@ -2,11 +2,11 @@
 
 @{
     ViewBag.Title = "title";
-    ViewData["Title"] = "Index";
+    //ViewData["Title"] = "Index";
     Layout = "_Layout";
 }
 
-<h1>Product List</h1>
+<h1>Ürünler</h1>
 
 <table class="table table-responsive">
     @foreach(var product in Model.Products)
@@ -17,6 +17,7 @@
         <td>@product.QuantityPerUnit</td>
         <td>@product.UnitPrice</td>
         <td>@product.UnitsInStock</td>
+        <td><a class="btn btn-sm btn-success" asp-controller="Cart" asp-action="AddToCart" asp-route-productId="@product.ProductId">Sepete Ekle</a></td>
     </tr>
     }
 </table>
